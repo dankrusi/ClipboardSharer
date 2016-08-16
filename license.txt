@@ -1,0 +1,12 @@
+/*
+ * Clipboard Sharer
+ *
+ * Clipboard Sharer by Dan Krusi is licensed under a Creative Commons
+ * Attribution-NonCommercial 3.0 Unported License.
+ *
+ * Copyright 2011 Dan Krusi
+ *
+ * www.dankrusi.com
+ *
+ */
+
