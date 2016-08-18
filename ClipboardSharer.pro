@@ -1,7 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2011-06-22T14:30:59
 # -------------------------------------------------
-QT += network
+QT += core network gui widgets
 TARGET = ClipboardSharer
 TEMPLATE = app
 SOURCES += main.cpp \

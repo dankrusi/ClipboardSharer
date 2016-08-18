@@ -10,7 +10,7 @@
  *
  */
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QSettings>
 
 #include "MainWindow.h"

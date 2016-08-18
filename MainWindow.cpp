@@ -35,9 +35,9 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui->remotePort->setValue(settings.value("remote-port", "7373").toInt());
 
 	// Override from command line?
-	if(qApp->argc() > 1) ui->localPort->setValue(QString(qApp->argv()[1]).toInt());
-	if(qApp->argc() > 2) ui->remoteMachine->setText(QString(qApp->argv()[2]));
-	if(qApp->argc() > 3) ui->remotePort->setValue(QString(qApp->argv()[3]).toInt());
+    if(qApp->arguments().count() > 1) ui->localPort->setValue(QString(qApp->arguments()[1]).toInt());
+    if(qApp->arguments().count() > 2) ui->remoteMachine->setText(QString(qApp->arguments()[2]));
+    if(qApp->arguments().count() > 3) ui->remotePort->setValue(QString(qApp->arguments()[3]).toInt());
 
 	// Tray icon and menu
 	trayIconMenu = new QMenu(this);
@@ -120,7 +120,7 @@ void MainWindow::checkClipboardForChanges() {
 		client.connectToHost(ui->remoteMachine->text(),ui->remotePort->value());
 		client.waitForConnected();
 		if(client.isWritable()) {
-			client.write(clipboardString.toAscii());
+            client.write(clipboardString.toLatin1());
 			client.waitForBytesWritten(2000);
 			client.close();
 		}
