@@ -120,7 +120,7 @@ void MainWindow::checkClipboardForChanges() {
 		client.connectToHost(ui->remoteMachine->text(),ui->remotePort->value());
 		client.waitForConnected();
 		if(client.isWritable()) {
-            client.write(clipboardString.toLatin1());
+            client.write(clipboardString.toUtf8());
 			client.waitForBytesWritten(2000);
 			client.close();
 		}
